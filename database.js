@@ -51,14 +51,19 @@ export function getProduct(db) {
   return new Promise((resolve, reject) => {
     db.all('SELECT * FROM product', (err, result) => {
       if (err) {
+        // console.log(err)
+        // throw err
         reject(err)
       }
-  
-      if (result) {
-        resolve(result)
-      } else {
-        resolve([])
-      }
+      
+      console.log('Query result', result)
+      //return result
+      resolve(result)
+      // if (result) {
+      //   resolve(result)
+      // } else {
+      //   resolve([])
+      // }
     })
   })
 }
